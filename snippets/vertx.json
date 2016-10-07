@@ -1,2 +1,79 @@
 {
+    "router.route": {
+        "prefix": "router.route",
+        "body": [
+            "router.route('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes all HTTP requests to the specifed path with the specified handler"
+    },
+    "router.get": {
+        "prefix": "router.get",
+        "body": [
+            "router.get('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP GET request to the specifed path with the specified handler"
+    },
+    "router.head": {
+        "prefix": "router.head",
+        "body": [
+            "router.head('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP HEAD request to the specifed path with the specified handler"
+    },
+    "router.options": {
+        "prefix": "router.options",
+        "body": [
+            "router.options('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP OPTIONS request to the specifed path with the specified handler"
+    },
+    "router.put": {
+        "prefix": "router.put",
+        "body": [
+            "router.put('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP PUT request to the specifed path with the specified handler"
+    },
+    "router.post": {
+        "prefix": "router.post",
+        "body": [
+            "router.post('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP POST request to the specifed path with the specified handler"
+    },
+    "router.delete": {
+        "prefix": "router.delete",
+        "body": [
+            "router.delete('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP DELETE request to the specifed path with the specified handler"
+    },
+    "router.trace": {
+        "prefix": "router.trace",
+        "body": [
+            "router.trace('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP TRACE request to the specifed path with the specified handler"
+    },
+    "router.connect": {
+        "prefix": "router.connect",
+        "body": [
+            "router.connect('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP CONNECT request to the specifed path with the specified handler"
+    },
+    "router.patch": {
+        "prefix": "router.patch",
+        "body": [
+            "router.patch('$1').handler(function (${2:ctx}) {\n\t${3}\n});"
+        ],
+        "description": "Routes HTTP PATCH request to the specifed path with the specified handler"
+    },
+    "vertx.createServer": {
+        "prefix": "vertx.createServer",
+        "body": [
+            "vertx.createHttpServer().requestHandler(${1:router}.accept).listen(${2:8080});"
+        ],
+        "description": "Creates an HTTP Server bounded to a Router"
+    }
 }
