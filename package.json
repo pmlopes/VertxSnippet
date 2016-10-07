@@ -22,14 +22,19 @@
         "Snippets"
     ],
     "activationEvents": [
-        "onLanguage:javascript"
+        "onLanguage:javascript",
+        "onLanguage:java"
     ],
     "main": "./src/extension",
     "contributes": {
         "snippets": [
             {
                 "language": "javascript",
-                "path": "./snippets/vertx.json"
+                "path": "./snippets/javascript.json"
+            },
+            {
+                "language": "java",
+                "path": "./snippets/java.json"
             }
         ]
     },
