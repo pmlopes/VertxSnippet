@@ -1,0 +1,52 @@
+{
+    "name": "vertxsnippet",
+    "displayName": "VertxSnippet",
+    "description": "Vertx Snippets for VS Code",
+    "version": "0.0.2",
+    "publisher": "pmlopes",
+    "homepage": "https://github.com/pmlopes/VertxSnippet",
+    "icon": "images/icon.svg",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pmlopes/VertxSnippet#js"
+    },
+    "license": "MIT",
+    "keywords": [
+        "Vert.x",
+        "Snippet"
+    ],
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "activationEvents": [
+        "onLanguage:javascript",
+        "onLanguage:java",
+        "onLanguage:xml"
+    ],
+    "main": "./src/extension",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/javascript.json"
+            },
+            {
+                "language": "java",
+                "path": "./snippets/java.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/xml.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "vscode": "^0.11.0"
+    }
+}
