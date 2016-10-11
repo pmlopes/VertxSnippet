@@ -1,79 +1,123 @@
 {
-  "router.route": {
-    "prefix": "router.route",
+  "verticle": {
+    "prefix": "verticle",
     "body": [
-      "router.route(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
+      "package $1;",
+      "",
+      "import io.vertx.core.*;",
+      "import io.vertx.core.http.*;",
+      "import io.vertx.core.net.*;",
+      "",
+      "import io.vertx.ext.web.*;",
+      "import io.vertx.ext.web.handler.*;",
+      "",
+      "public class ${2:MyVerticle} extends AbstractVerticle {",
+      "",
+      "\t@Override",
+      "\tpublic void start() {",
+      "\t\t$3",
+      "\t}",
+      "}"
     ],
-    "description": "Routes all HTTP requests to the specifed path with the specified handler"
+    "description": "Creates a empty Verticle"
   },
-  "router.get": {
-    "prefix": "router.get",
+
+  "router-get": {
+    "prefix": "router-get",
     "body": [
       "router.get(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP GET request to the specifed path with the specified handler"
+    "description": "Routes a HTTP GET request to a handler"
   },
-  "router.head": {
-    "prefix": "router.head",
+  "router-head": {
+    "prefix": "router-head",
     "body": [
       "router.head(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP HEAD request to the specifed path with the specified handler"
+    "description": "Routes a HTTP HEAD request to a handler"
   },
-  "router.options": {
-    "prefix": "router.options",
+  "router-options": {
+    "prefix": "router-options",
     "body": [
       "router.options(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP OPTIONS request to the specifed path with the specified handler"
+    "description": "Routes a HTTP OPTIONS request to a handler"
   },
-  "router.put": {
-    "prefix": "router.put",
+  "router-put": {
+    "prefix": "router-put",
     "body": [
       "router.put(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP PUT request to the specifed path with the specified handler"
+    "description": "Routes a HTTP PUT request to a handler"
   },
-  "router.post": {
-    "prefix": "router.post",
+  "router-post": {
+    "prefix": "router-post",
     "body": [
       "router.post(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP POST request to the specifed path with the specified handler"
+    "description": "Routes a HTTP POST request to a handler"
   },
-  "router.delete": {
-    "prefix": "router.delete",
+  "router-delete": {
+    "prefix": "router-delete",
     "body": [
       "router.delete(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP DELETE request to the specifed path with the specified handler"
+    "description": "Routes a HTTP DELETE request to a handler"
   },
-  "router.trace": {
-    "prefix": "router.trace",
+  "router-trace": {
+    "prefix": "router-trace",
     "body": [
       "router.trace(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP TRACE request to the specifed path with the specified handler"
+    "description": "Routes a HTTP TRACE request to handler"
   },
-  "router.connect": {
-    "prefix": "router.connect",
+  "router-connect": {
+    "prefix": "router-connect",
     "body": [
       "router.connect(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP CONNECT request to the specifed path with the specified handler"
+    "description": "Routes a HTTP CONNECT request to a handler"
   },
-  "router.patch": {
-    "prefix": "router.patch",
+  "router-patch": {
+    "prefix": "router-patch",
     "body": [
       "router.patch(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
     ],
-    "description": "Routes HTTP PATCH request to the specifed path with the specified handler"
+    "description": "Routes a HTTP PATCH request to a handler"
   },
-  "vertx.createServer": {
-    "prefix": "vertx.createServer",
+  "router-route": {
+    "prefix": "router-route",
+    "body": [
+      "router.route(\"$1\").handler(${2:ctx} -> {\n\t${3}\n});"
+    ],
+    "description": "Routes any HTTP verb requests to a handler"
+  },
+
+  "httpServer": {
+    "prefix": "httpServer",
     "body": [
       "vertx.createHttpServer().requestHandler(${1:router}::accept).listen(${2:8080});"
     ],
     "description": "Creates an HTTP Server bounded to a Router"
+  },
+  "httpsServer": {
+    "prefix": "httpsServer",
+    "body": [
+      "vertx.createHttpServer(new HttpServerOptions().setSsl(true).setKeyStoreOptions(",
+      "\tnew JksOptions().setPath(\"${1:server-keystore.jks}\").setPassword(\"$2\")",
+      ")).requestHandler(${3:router}::accept).listen(${4:8443});"
+    ],
+    "description": "Creates an HTTPS Server bounded to a Router"
+  },
+  "http2Server": {
+    "prefix": "http2Server",
+    "body": [
+      "vertx.createHttpServer(new HttpServerOptions().",
+      "\tsetUseAlpn(true).",
+      "\tsetSsl(true).",
+      "\tsetPemKeyCertOptions(new PemKeyCertOptions().setKeyPath(\"${1:server-key.pem}\").setCertPath(\"${2:server-cert.pem}\")",
+      ")).requestHandler(${3:router}::accept).listen(${4:4443});"
+    ],
+    "description": "Creates an HTTP2 Server bounded to a Router"
   }
 }

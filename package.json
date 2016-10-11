@@ -23,7 +23,8 @@
     ],
     "activationEvents": [
         "onLanguage:javascript",
-        "onLanguage:java"
+        "onLanguage:java",
+        "onLanguage:xml"
     ],
     "main": "./src/extension",
     "contributes": {
@@ -35,6 +36,10 @@
             {
                 "language": "java",
                 "path": "./snippets/java.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/xml.json"
             }
         ]
     },
