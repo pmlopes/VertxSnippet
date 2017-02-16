@@ -2,7 +2,7 @@
   "name": "vertxsnippet",
   "displayName": "VertxSnippet",
   "description": "Vertx Snippets for VS Code",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "pmlopes",
   "homepage": "https://github.com/pmlopes/VertxSnippet",
   "icon": "images/icon.svg",
@@ -65,6 +65,6 @@
     "jshint": "2.9.4"
   },
   "dependencies": {
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.6"
   }
 }
