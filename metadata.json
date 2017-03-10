@@ -1,8 +1,8 @@
 [
   {
-    "id": "java::empty",
+    "id": "java",
     "dependencies": [
-      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0.Beta1" }
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0" }
     ],
     "buildtool": "Apache Maven",
     "main": "{package}.MainVerticle",
@@ -12,10 +12,10 @@
     ]
   },
   {
-    "id": "groovy::empty",
+    "id": "groovy",
     "dependencies": [
-      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0.Beta1" },
-      { "group": "io.vertx", "artifact": "vertx-lang-groovy", "version": "3.4.0.Beta1" }
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0" },
+      { "group": "io.vertx", "artifact": "vertx-lang-groovy", "version": "3.4.0" }
     ],
     "buildtool": "Apache Maven",
     "main": "main.groovy",
@@ -25,10 +25,10 @@
     ]
   },
   {
-    "id": "ruby::empty",
+    "id": "ruby",
     "dependencies": [
-      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0.Beta1" },
-      { "group": "io.vertx", "artifact": "vertx-lang-ruby", "version": "3.4.0.Beta1" }
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0" },
+      { "group": "io.vertx", "artifact": "vertx-lang-ruby", "version": "3.4.0" }
     ],
     "buildtool": "Apache Maven",
     "main": "main.rb",
@@ -37,11 +37,24 @@
       "maven/src/main/resources/main.rb"
     ]
   },
+  {
+    "id": "kotlin",
+    "dependencies": [
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0" },
+      { "group": "io.vertx", "artifact": "vertx-lang-kotlin", "version": "3.4.0" }
+    ],
+    "buildtool": "Apache Maven",
+    "main": "{package}.MainVerticle",
+    "templates": [
+      "maven/pom.xml",
+      "maven/src/main/kotlin/{package}/MainVerticle.kt"
+    ]
+  },
 
   {
-    "id": "java::empty",
+    "id": "java",
     "dependencies": [
-      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0.Beta1" }
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0" }
     ],
     "buildtool": "Gradle",
     "main": "{package}.MainVerticle",
@@ -51,10 +64,10 @@
     ]
   },
   {
-    "id": "groovy::empty",
+    "id": "groovy",
     "dependencies": [
-      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0.Beta1" },
-      { "group": "io.vertx", "artifact": "vertx-lang-groovy", "version": "3.4.0.Beta1" }
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0" },
+      { "group": "io.vertx", "artifact": "vertx-lang-groovy", "version": "3.4.0" }
     ],
     "buildtool": "Gradle",
     "main": "main.groovy",
@@ -64,10 +77,10 @@
     ]
   },
   {
-    "id": "ruby::empty",
+    "id": "ruby",
     "dependencies": [
-      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0.Beta1" },
-      { "group": "io.vertx", "artifact": "vertx-lang-ruby", "version": "3.4.0.Beta1" }
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0" },
+      { "group": "io.vertx", "artifact": "vertx-lang-ruby", "version": "3.4.0" }
     ],
     "buildtool": "Gradle",
     "main": "main.rb",
@@ -78,10 +91,10 @@
   },
 
   {
-    "id": "javascript::empty",
+    "id": "javascript",
     "dependencies": [
-      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0.Beta1" },
-      { "group": "io.vertx", "artifact": "vertx-lang-js", "version": "3.4.0.Beta1" }
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.0" },
+      { "group": "io.vertx", "artifact": "vertx-lang-js", "version": "3.4.0" }
     ],
     "buildtool": "NPM",
     "main": "{package}.MainVerticle",

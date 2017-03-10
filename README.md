@@ -6,7 +6,6 @@ A collection of snippets for Vert.x, currently `Java` and `JavaScript` snippets 
 
 | Snippet        | Description            | Java  | JavaScript |
 | -------------- |:-----------------------|:-----:|:----------:|
-| maven-pom      | basic pom.xml          | ✔     | ✔         |
 | verticle       | empty verticle         | ✔     |           |
 | router-get     | HTTP GET handler       | ✔     | ✔         |
 | router-head    | HTTP GET handler       | ✔     | ✔         |

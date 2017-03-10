@@ -69,6 +69,8 @@ function activate(context) {
         showQuickPick(templateIds, function (template) {
           // the selected template
           project.template = template;
+          // set a property with the used language
+          project[template] = true;
           try {
             // locate the selected metadata and add to the project object
             project.metadata = metadata.filter(function (el) {
