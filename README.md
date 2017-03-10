@@ -4,7 +4,6 @@ A collection of snippets for Vert.x, currently `Java` and `JavaScript` snippets 
 
 ## List of snippets
 
-
 | Snippet        | Description            | Java  | JavaScript |
 | -------------- |:-----------------------|:-----:|:----------:|
 | maven-pom      | basic pom.xml          | ✔     | ✔         |
@@ -22,3 +21,13 @@ A collection of snippets for Vert.x, currently `Java` and `JavaScript` snippets 
 | httpServer     | bootstrap HTTP server  | ✔     | ✔         |
 | httpsServer    | bootstrap HTTPS server | ✔     | ✔         |
 | http2Server    | bootstrap HTTP2 server | ✔     | ✔         |
+
+## Create a Project
+
+This is a new feature, hover your mouse over the file explorer and right click. You will be presented with a new context menu item: `New Vert.x Project`.
+
+You will be asked for which build tool you prefer, if you don't see the tool you like feel free to contribute it to the metadata file.
+
+Once you select that if there are multiple templates for that tool you select it and you're done.
+
+Internally it derives the project name from the current working folder and that's it!

@@ -1,52 +1,65 @@
 {
-    "name": "vertxsnippet",
-    "displayName": "VertxSnippet",
-    "description": "Vertx Snippets for VS Code",
-    "version": "0.0.2",
-    "publisher": "pmlopes",
-    "homepage": "https://github.com/pmlopes/VertxSnippet",
-    "icon": "images/icon.svg",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/pmlopes/VertxSnippet#js"
-    },
-    "license": "MIT",
-    "keywords": [
-        "Vert.x",
-        "Snippet"
+  "name": "vertxsnippet",
+  "displayName": "VertxSnippet",
+  "description": "Vertx Snippets for VS Code",
+  "version": "0.0.4",
+  "publisher": "pmlopes",
+  "homepage": "https://github.com/pmlopes/VertxSnippet",
+  "icon": "images/icon.svg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pmlopes/VertxSnippet#js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "Vert.x",
+    "Snippet"
+  ],
+  "engines": {
+    "vscode": "^0.10.10"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:java",
+    "onCommand:extension.generate"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "java",
+        "path": "./snippets/java.json"
+      }
     ],
-    "engines": {
-        "vscode": "^0.10.10"
-    },
-    "categories": [
-        "Snippets"
+    "commands": [
+      {
+        "command": "extension.generate",
+        "title": "New Vert.x Project..."
+      }
     ],
-    "activationEvents": [
-        "onLanguage:javascript",
-        "onLanguage:java",
-        "onLanguage:xml"
-    ],
-    "main": "./src/extension",
-    "contributes": {
-        "snippets": [
-            {
-                "language": "javascript",
-                "path": "./snippets/javascript.json"
-            },
-            {
-                "language": "java",
-                "path": "./snippets/java.json"
-            },
-            {
-                "language": "xml",
-                "path": "./snippets/xml.json"
-            }
-        ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "devDependencies": {
-        "vscode": "^0.11.0"
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceLangId != *",
+          "command": "extension.generate",
+          "group": "navigation"
+        }
+      ]
     }
+  },
+  "devDependencies": {
+    "vscode": "^0.11.0",
+    "jshint": "2.9.4"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.6"
+  }
 }
