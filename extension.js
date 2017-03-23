@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 var fs = require('fs');
+var path = require('path');
 var vscode = require('vscode');
 var metadata = require('./metadata.json');
 var generator = require('./generator');
@@ -34,10 +35,24 @@ function activate(context) {
     var project = {};
 
     try {
+      // no event means that this was activated from the command pallete
+      var base = e ? e.path : vscode.workspace.rootPath;
       // the project root is derived from the event
-      project.projectRoot = fs.lstatSync(e.path).isDirectory() ? e.path : path.substring(0, e.path.lastIndexOf('/'));
+      if (fs.lstatSync(base).isDirectory()) {
+        project.projectRoot = base;
+      } else {
+        // the right click happened on a file,
+        // try to climb 1 level up
+        base = path.dirname(base);
+        // re-test
+        if (fs.lstatSync(base).isDirectory()) {
+          project.projectRoot = base;
+        } else {
+          throw new Error('\'' + base + '\' is not a directory.')
+        }
+      }
       // the project name is derived from the project root path
-      project.projectName = project.projectRoot.lastIndexOf('/') !== -1 ? project.projectRoot.substr(project.projectRoot.lastIndexOf('/') + 1) : project.projectRoot;
+      project.projectName = path.basename(base);
     } catch (ex) {
       vscode.window.showErrorMessage(ex.message);
     }
@@ -45,7 +60,7 @@ function activate(context) {
     // if there is already a project file show warning and stop
     try {
       var projectAlreadyExists = ['pom.xml', 'build.gradle', 'package.json'].some(function (el) {
-        return fs.existsSync(project.projectRoot + '/' + el);
+        return fs.existsSync(project.projectRoot + path.sep + el);
       });
 
       if (projectAlreadyExists) {
