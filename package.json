@@ -2,7 +2,7 @@
   "name": "vertxsnippet",
   "displayName": "VertxSnippet",
   "description": "Vertx Snippets for VS Code",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "publisher": "pmlopes",
   "homepage": "https://github.com/pmlopes/VertxSnippet",
   "icon": "images/icon.svg",

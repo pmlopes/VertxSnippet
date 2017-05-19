@@ -110,11 +110,27 @@
       { "group": "io.vertx", "artifact": "vertx-lang-js", "version": "3.4.1" }
     ],
     "buildtool": "NPM",
-    "main": "{package}.MainVerticle",
+    "main": "main.js",
     "templates": [
       "npm/package.json",
       "npm/webpack.config.js",
       "npm/src/main.js"
+    ]
+  },
+
+  {
+    "id": "typescript",
+    "dependencies": [
+      { "group": "io.vertx", "artifact": "vertx-core", "version": "3.4.1" },
+      { "group": "io.vertx", "artifact": "vertx-lang-js", "version": "3.4.1" }
+    ],
+    "buildtool": "NPM",
+    "main": "main.js",
+    "templates": [
+      "npm/package.json",
+      "npm/tsconfig.json",
+      "npm/webpack.config.js",
+      "npm/src/main.ts"
     ]
   }
 ]

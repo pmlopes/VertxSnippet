@@ -138,19 +138,42 @@ for (dep in javaDependencies) {
 module.exports = [];
 
 module.exports.push({
+  {{#if javascript}}
   entry: path.resolve(__dirname, 'src/main.js'),
+  {{/if}}
+  {{#if typescript}}
+  entry: path.resolve(__dirname, 'src/main.ts'),
+  {{/if}}
 
   output: {
-    filename: _package.mainVerticle
+    filename: _package.mainVerticle,
+    path: __dirname
   },
 
   externals: vertxModules,
 
   module: {
+    {{#if javascript}}
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
     ]
+    {{/if}}
+    {{#if typescript}}
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+      }
+    ]
+    {{/if}}
   },
+
+  {{#if typescript}}
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
+  },
+  {{/if}}
 
   plugins: []
 });
