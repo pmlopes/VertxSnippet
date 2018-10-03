@@ -1,4 +1,15 @@
 {
+  "verticle": {
+    "prefix": "nv",
+    "body": [
+      "/// <reference types="@vertx/core/runtime" />",
+      "// @ts-check",
+      "",
+      "$0"
+    ],
+    "description": "new verticle"
+  },
+
   "web-route-handler": {
     "prefix": "wrh",
     "body": [

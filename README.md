@@ -6,7 +6,7 @@ A collection of snippets for Vert.x, currently `Java` and `JavaScript` snippets 
 
 | Snippet | Description              | Java  | JavaScript |
 | ------- |:-------------------------|:-----:|:----------:|
-| nv      | `N`ew `V`erticle         | ✔     |           |
+| nv      | `N`ew `V`erticle         | ✔     | ✔         |
 | wrh     | `W`eb `R`outer `H`andler | ✔     | ✔         |
 | chs     | `C`reate `H`ttp `S`erver | ✔     | ✔         |
 | pgp     | `P`ost`G`reSQL `P`ool    | ✔     | ✔         |
