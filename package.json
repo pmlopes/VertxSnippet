@@ -2,10 +2,10 @@
   "name": "vertxsnippet",
   "displayName": "VertxSnippet",
   "description": "Vertx Snippets for VS Code",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publisher": "pmlopes",
   "homepage": "https://github.com/pmlopes/VertxSnippet",
-  "icon": "images/icon.svg",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/pmlopes/VertxSnippet#js"
@@ -16,18 +16,11 @@
     "Snippet"
   ],
   "engines": {
-    "vscode": "^0.10.10"
+    "vscode": "^0.10.1"
   },
   "categories": [
-    "Snippets",
-    "Other"
+    "Snippets"
   ],
-  "activationEvents": [
-    "onLanguage:javascript",
-    "onLanguage:java",
-    "onCommand:extension.generate"
-  ],
-  "main": "./extension",
   "contributes": {
     "snippets": [
       {
@@ -38,28 +31,6 @@
         "language": "java",
         "path": "./snippets/java.json"
       }
-    ],
-    "commands": [
-      {
-        "command": "extension.generate",
-        "title": "New Vert.x Project..."
-      }
-    ],
-    "menus": {
-      "explorer/context": [
-        {
-          "when": "resourceLangId != *",
-          "command": "extension.generate",
-          "group": "navigation"
-        }
-      ]
-    }
-  },
-  "devDependencies": {
-    "vscode": "^0.11.0",
-    "jshint": "2.9.4"
-  },
-  "dependencies": {
-    "handlebars": "^4.0.6"
+    ]
   }
 }
