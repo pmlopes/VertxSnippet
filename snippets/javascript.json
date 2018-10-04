@@ -2,7 +2,7 @@
   "verticle": {
     "prefix": "nv",
     "body": [
-      "/// <reference types="@vertx/core/runtime" />",
+      "/// <reference types=\"@vertx/core/runtime\" />",
       "// @ts-check",
       "",
       "$0"
@@ -13,7 +13,7 @@
   "web-route-handler": {
     "prefix": "wrh",
     "body": [
-      "${1:app}.${2|get,post,put,patch,delete,options,head,trace,connect,route|}('$3').handler(function (${4:ctx}) {",
+      "${1:app}.${2|get,post,put,patch,delete,options,head,trace,connect,route|}('${3:/}').handler(function (${4:ctx}) {",
       "\t$0",
       "});"
     ],
@@ -43,7 +43,7 @@
       "PgClient.pool(",
       "\tvertx,",
       "\tnew PgPoolOptions()",
-      "\t\t.setCachePreparedStatements({1|true,false|})",
+      "\t\t.setCachePreparedStatements(${1|true,false|})",
       "\t\t.setMaxSize(${2:1})",
       "\t\t.setHost('$3')",
       "\t\t.setUser('${4:postgres}')",

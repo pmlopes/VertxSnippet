@@ -25,7 +25,7 @@
   "web-route-handler": {
     "prefix": "wrh",
     "body": [
-      "${1:router}.${2|get,post,put,patch,delete,options,head,trace,connect,route|}(\"${3}\").handler(${4:ctx} -> {",
+      "${1:router}.${2|get,post,put,patch,delete,options,head,trace,connect,route|}(\"${3:/}\").handler(${4:ctx} -> {",
       "\t$0",
       "});"
     ],
@@ -55,7 +55,7 @@
       "PgClient.pool(",
       "\tvertx,",
       "\tnew PgPoolOptions()",
-      "\t\t.setCachePreparedStatements({1|true,false|})",
+      "\t\t.setCachePreparedStatements(${1|true,false|})",
       "\t\t.setMaxSize(${2:1})",
       "\t\t.setHost(\"$3\")",
       "\t\t.setUser(\"${4:postgres}\")",
