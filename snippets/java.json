@@ -22,6 +22,14 @@
     "description": "new verticle"
   },
 
+  "web-router": {
+    "prefix": "wr",
+    "body": [
+      "Router ${1:router} = Router.router(vertx);"
+    ],
+    "description": "vert.x web router"
+  },
+
   "web-route-handler": {
     "prefix": "wrh",
     "body": [
@@ -52,16 +60,34 @@
   "pg-pool": {
     "prefix": "pgp",
     "body": [
-      "PgClient.pool(",
-      "\tvertx,",
-      "\tnew PgPoolOptions()",
-      "\t\t.setCachePreparedStatements(${1|true,false|})",
-      "\t\t.setMaxSize(${2:1})",
-      "\t\t.setHost(\"$3\")",
+      "PgPool.pool(",
+      "\tnew PgConnectOptions()",
+      "\t\t.setPort(${1:5432})",
+      "\t\t.setHost(\"${2:the-host}\")",
+      "\t\t.setDatabase(\"${3:the-db}\")",
       "\t\t.setUser(\"${4:postgres}\")",
-      "\t\t.setPassword(\"${5:secret}\")",
-      "\t\t.setDatabase(\"$0\"));"
+      "\t\t.setPassword(\"${5:postgres}\")",
+      "\t\t.setCachePreparedStatements(${6|true,false|}),",
+      "\tnew PoolOptions()",
+      "\t\t.setMaxSize(${7:4}));"
     ],
-    "description": "pg-client pool"
+    "description": "postgres pool"
+  },
+
+  "my-pool": {
+    "prefix": "myp",
+    "body": [
+      "MySQLPool.pool(",
+      "\tnew MySQLConnectOptions()",
+      "\t\t.setPort(${1:5432})",
+      "\t\t.setHost(\"${2:the-host}\")",
+      "\t\t.setDatabase(\"${3:the-db}\")",
+      "\t\t.setUser(\"${4:postgres}\")",
+      "\t\t.setPassword(\"${5:postgres}\")",
+      "\t\t.setCachePreparedStatements(${6|true,false|}),",
+      "\tnew PoolOptions()",
+      "\t\t.setMaxSize(${7:4}));"
+    ],
+    "description": "mysql pool"
   }
 }

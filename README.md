@@ -6,10 +6,12 @@ A collection of snippets for Vert.x, currently `Java` and `JavaScript` snippets 
 
 | Snippet | Description              | Java  | JavaScript |
 | ------- |:-------------------------|:-----:|:----------:|
-| nv      | `N`ew `V`erticle         | ✔     | ✔         |
-| wrh     | `W`eb `R`outer `H`andler | ✔     | ✔         |
-| chs     | `C`reate `H`ttp `S`erver | ✔     | ✔         |
-| pgp     | `P`ost`G`reSQL `P`ool    | ✔     | ✔         |
+| nv      | `N`ew `V`erticle         | ✔     | ✔          |
+| wr      | `W`eb `R`outer           | ✔     | ✔          |
+| wrh     | `W`eb `R`outer `H`andler | ✔     | ✔          |
+| chs     | `C`reate `H`ttp `S`erver | ✔     | ✔          |
+| pgp     | `P`ost`G`reSQL `P`ool    | ✔     | ✔          |
+| myp     | `My`SQL `P`ool           | ✔     | ✔          |
 
 *If you think new snippets would be useful, please create an [issue here](https://github.com/pmlopes/VertxSnippet/issues)!*
 

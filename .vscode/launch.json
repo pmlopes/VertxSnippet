@@ -10,7 +10,7 @@
             "args": ["--extensionDevelopmentPath=${workspaceRoot}" ],
             "stopOnEntry": false,
             "sourceMaps": false,
-            "outDir": "${workspaceRoot}/src"
+            "outFiles": "${workspaceRoot}/src"
         },
         {
             "name": "Launch Tests",
@@ -20,7 +20,7 @@
             "args": ["--extensionDevelopmentPath=${workspaceRoot}", "--extensionTestsPath=${workspaceRoot}/test" ],
             "stopOnEntry": false,
             "sourceMaps": false,
-            "outDir": "${workspaceRoot}/test"
+            "outFiles": "${workspaceRoot}/test"
         }
     ]
 }
